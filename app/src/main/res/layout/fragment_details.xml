@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context="io.github.mattpvaughn.pokeapp.features.details.DetailsFragment">
+
+            <ImageView
+                android:id="@+id/details_artwork"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/app_bar_height"
+                android:layout_marginBottom="@dimen/margin_large"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/example_cover" />
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/TextAppearance.Body1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                app:layout_constraintBottom_toTopOf="@id/weight"
+                app:layout_constraintLeft_toLeftOf="@id/left_gutter"
+                app:layout_constraintRight_toRightOf="@id/right_gutter"
+                app:layout_constraintTop_toBottomOf="@id/details_artwork"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="Book title but it's very long so it overflows past the edge of the screen" />
+
+            <TextView
+                android:id="@+id/weight"
+                style="@style/TextAppearance.Body2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                app:layout_constraintBottom_toTopOf="@id/type"
+                app:layout_constraintLeft_toLeftOf="@id/name"
+                app:layout_constraintRight_toRightOf="@id/name"
+                app:layout_constraintTop_toBottomOf="@id/name"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="Author name won't overflow" />
+
+            <TextView
+                android:id="@+id/type"
+                style="@style/TextAppearance.Body2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                app:layout_constraintLeft_toLeftOf="@id/name"
+                app:layout_constraintRight_toRightOf="@id/name"
+                app:layout_constraintTop_toBottomOf="@id/weight"
+                tools:text="Author name won't overflow" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/left_gutter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/screen_horizontal_padding" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/right_gutter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/screen_horizontal_padding" />
+
+            <ProgressBar
+                android:id="@+id/loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/details_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back_black" />
+
+</FrameLayout>

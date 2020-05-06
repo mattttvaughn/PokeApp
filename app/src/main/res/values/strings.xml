@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Generic App Template</string>
+    <string name="tab_library">Pokemon</string>
+    <string name="no_books_found">No items found</string>
+    <string name="refresh_list">Refresh list</string>
+    <string name="home">Home</string>
+    <string name="not_connected">No network connection</string>
+</resources>
