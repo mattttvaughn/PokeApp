@@ -12,3 +12,4 @@
 .externalNativeBuild
 .cxx
 *.mp4
+*.un~
